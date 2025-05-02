@@ -52,32 +52,34 @@ const badges = [
   },
 ];
 
-function Badges() {
+function Badges() {  // Use 'badges' directly as a prop
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 p-6">
-      <h1 className="text-4xl font-bold text-center text-purple-700 mb-10 animate-bounceOnce">
-        My Badges
-      </h1>
+      {/* Header and Certifications Button */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10 space-y-4 sm:space-y-0">
+        <h1 className="text-4xl font-bold text-center sm:text-left text-purple-700 animate-bounceOnce">
+          My Badges
+        </h1>
+        <div className="flex justify-center sm:justify-end w-full sm:w-auto">
+          <Link to="/certifications">
+            <button className="bg-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-600 transition-colors w-full sm:w-auto">
+              See Certifications
+            </button>
+          </Link>
+        </div>
+      </div>
 
-      {/* Button to navigate to certifications page */}
-      <Link to="/certifications">
-        <button
-          className="fixed top-4 right-4 bg-purple-700 text-white px-8 py-4 rounded-full shadow-lg hover:bg-purple-600 transition-colors"
-        >
-          See Certifications
-        </button>
-      </Link>
-
+      {/* Badge Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 mt-6">
         {badges.map((badge, idx) => (
           <div
             key={idx}
-            className={`p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800`}
+            className="p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800"
           >
             <img
               src={badge.photo}
               alt={badge.title}
-              className="w-full h-40 object-contain rounded-md mb-4" // Changed object-cover to object-contain
+              className="w-full h-40 object-contain rounded-md mb-4"
             />
             <h3 className="text-2xl font-semibold text-white mb-2">{badge.title}</h3>
             <p className="text-xl text-white mb-2">{badge.organization}</p>
