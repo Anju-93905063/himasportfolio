@@ -60,9 +60,9 @@ function Badges() {  // Use 'badges' directly as a prop
         <h1 className="text-4xl font-bold text-center sm:text-left text-purple-700 animate-bounceOnce">
           My Badges
         </h1>
-        <div className="flex justify-center sm:justify-end w-full sm:w-auto">
+       <div className="flex justify-center sm:justify-end">
           <Link to="/certifications">
-            <button className="bg-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-600 transition-colors w-full sm:w-auto">
+            <button className="bg-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-600 transition-colors">
               See Certifications
             </button>
           </Link>
