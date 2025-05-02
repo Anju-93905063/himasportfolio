@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const certifications = [
@@ -7,82 +7,63 @@ const certifications = [
     organization: 'Google (Eduskills)',
     date: 'Oct - Dec 2024',
     certificateLink: 'https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=e749d8f8caa13d34b0037ed2f85f37f4',
-    description:
-      'This internship enhanced my skills in Android app development, focusing on Java and Kotlin for building scalable apps.',
-    color: 'bg-blue-500',
+    description: 'This internship enhanced my skills in Android app development, focusing on Java and Kotlin for building scalable apps.',
   },
   {
     title: 'AWS AIML Virtual Internship',
     organization: 'Amazon (Eduskills)',
     date: 'Jan - Mar 2024',
     certificateLink: 'https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=ddc728b580a779040e0a32b27440a6c8',
-    description:
-      'This internship provided hands-on experience with AWS services like S3, Lambda, and machine learning models.',
-    color: 'bg-green-500',
+    description: 'This internship provided hands-on experience with AWS services like S3, Lambda, and machine learning models.',
   },
   {
     title: 'Google AI/ML Internship',
     organization: 'Google (Eduskills)',
     date: 'Jan - Mar 2025',
     certificateLink: 'https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=218ac1c3d1bc753cbecb50b6d371ce0a',
-    description:
-      'Focused on AI/ML concepts and applications, including supervised and unsupervised learning techniques.',
-    color: 'bg-purple-500',
+    description: 'Focused on AI/ML concepts and applications, including supervised and unsupervised learning techniques.',
   },
   {
     title: 'Palo Alto Cybersecurity Virtual Internship',
     organization: 'Palo Alto Networks (AICTE Eduskills)',
     date: 'Jul - Sept 2024',
     certificateLink: 'https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=8098ee9da25844f84edda599c237a131',
-    description:
-      'This internship offered in-depth knowledge about next-gen firewalls and cybersecurity principles.',
-    color: 'bg-yellow-500',
+    description: 'This internship offered in-depth knowledge about next-gen firewalls and cybersecurity principles.',
   },
   {
     title: 'CodeWay Python Internship',
     organization: 'CodeWay',
     date: 'Feb 8, 2024 - Mar 8, 2024',
     certificateLink: 'https://drive.google.com/file/d/1WQH9Wcfief3bO3wmYbXam-xjbIj4SBrr/view?usp=sharing',
-    description:
-      'A focused program to enhance Python programming skills with practical problem-solving challenges.',
-    color: 'bg-teal-500',
+    description: 'A focused program to enhance Python programming skills with practical problem-solving challenges.',
   },
   {
     title: 'Swecha AI Internship',
     organization: 'Swecha',
     date: 'May 14, 2024 - June 21, 2024',
     certificateLink: 'https://drive.google.com/file/d/10cdePk-rhIlwqJFXiV7IzmG6Z0UmCC7p/view?usp=sharing',
-    description:
-      'An AI-centric internship where I developed machine learning models and applied them to real-world datasets.',
-    color: 'bg-indigo-500',
+    description: 'An AI-centric internship where I developed machine learning models and applied them to real-world datasets.',
   },
   {
     title: 'AWS Data Engineering Internship',
     organization: 'Amazon (Eduskills)',
     date: 'April - June 2024',
     certificateLink: 'https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=faecd4703ecfc8c153f83f7844600bc3',
-    description:
-      'Hands-on experience with data engineering techniques using AWS, focusing on ETL processes and cloud technologies.',
-    color: 'bg-red-500',
+    description: 'Hands-on experience with data engineering techniques using AWS, focusing on ETL processes and cloud technologies.',
   },
-
   {
     title: 'AWS AI-ML & Data Engineering Long-Term Internship',
     organization: 'EduSkills in collaboration with Andhra Pradesh State Council of Higher Education',
     date: '240 Hours',
     certificateLink: 'https://drive.google.com/file/d/1buD4k91TYQ6XRwOo67q1Jcb5mC7NcvIt/view?usp=sharing',
-    description:
-      'This long-term internship enhanced my skills in both AI-ML and Data Engineering, focusing on AWS tools and cloud services.',
-    color: 'bg-orange-500',
+    description: 'This long-term internship enhanced my skills in both AI-ML and Data Engineering, focusing on AWS tools and cloud services.',
   },
   {
     title: 'AWS AI-ML Short-Term Internship',
     organization: 'EduSkills in collaboration with Andhra Pradesh State Council of Higher Education',
     date: '120 Hours',
     certificateLink: 'https://drive.google.com/file/d/1B0Spn1ihCpDHtorvdBTOkJbPEKMdfNNy/view?usp=sharing',
-    description:
-      'This short-term internship provided intensive hands-on experience with AI and machine learning using AWS tools and services.',
-    color: 'bg-pink-500',
+    description: 'This short-term internship provided intensive hands-on experience with AI and machine learning using AWS tools and services.',
   },
 ];
 
@@ -134,30 +115,28 @@ const courses = [
 function Certifications() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 p-6">
-      <h1 className="text-4xl font-bold text-center text-purple-700 mb-10 animate-bounceOnce">
-        My Certifications
-      </h1>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10">
+        <h1 className="text-4xl font-bold text-center sm:text-left text-purple-700 animate-bounceOnce">
+          My Certifications
+        </h1>
+        <div className="mt-4 sm:mt-0 flex justify-center sm:justify-end">
+          <Link to="/badges">
+            <button className="bg-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-600 transition-colors">
+              See Badges
+            </button>
+          </Link>
+        </div>
+      </div>
 
-      <Link to="/badges">
-        <button
-          className="fixed top-4 right-4 bg-purple-700 text-white px-8 py-4 rounded-full shadow-lg hover:bg-purple-600 transition-colors"
-        >
-          See Badges
-        </button>
-      </Link>
-
-      {/* Internships Section */}
+      {/* Certifications Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 mt-6">
-        {certifications.map((certification, idx) => (
-          <div
-            key={idx}
-            className="p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800"
-          >
-            <h3 className="text-2xl font-semibold text-white mb-2">{certification.title}</h3>
-            <p className="text-xl text-white mb-2">{certification.organization}</p>
-            <p className="text-md text-white mb-2">{certification.date}</p>
-            <p className="text-white mb-2">{certification.description}</p>
-            <a href={certification.certificateLink} target="_blank" rel="noopener noreferrer">
+        {certifications.map((cert, idx) => (
+          <div key={idx} className="p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800">
+            <h3 className="text-2xl font-semibold text-white mb-2">{cert.title}</h3>
+            <p className="text-xl text-white mb-2">{cert.organization}</p>
+            <p className="text-md text-white mb-2">{cert.date}</p>
+            <p className="text-white mb-2">{cert.description}</p>
+            <a href={cert.certificateLink} target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-700 text-white px-6 py-2 rounded-full mt-4 hover:bg-gray-600 transition-colors">
                 See Certificate
               </button>
@@ -166,32 +145,23 @@ function Certifications() {
         ))}
       </div>
 
-      {/* Course Certificates Section */}
       <h2 className="text-3xl font-bold text-center text-purple-700 mt-20 mb-10 animate-fadeIn">
         Course Completion Certificates
       </h2>
 
+      {/* Courses Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
         {courses.map((course, idx) => (
-          <div
-            key={idx}
-            className="p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800"
-          >
+          <div key={idx} className="p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800">
             <h3 className="text-2xl font-semibold text-white mb-2">{course.title}</h3>
             <p className="text-xl text-white mb-2">{course.organization}</p>
             <p className="text-md text-white mb-2">{course.date}</p>
             <p className="text-white mb-2">{course.description}</p>
-            {course.certificateLink !== '#' && (
-             <a
-             href={course.certificateLink}
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             <button className="bg-gray-700 text-white px-6 py-2 rounded-full mt-4 hover:bg-gray-600 transition-colors">
-               See Certificate
-             </button>
-           </a>
-            )}
+            <a href={course.certificateLink} target="_blank" rel="noopener noreferrer">
+              <button className="bg-gray-700 text-white px-6 py-2 rounded-full mt-4 hover:bg-gray-600 transition-colors">
+                See Certificate
+              </button>
+            </a>
           </div>
         ))}
       </div>
