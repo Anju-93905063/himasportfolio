@@ -111,15 +111,15 @@ const courses = [
     description: 'Completed Accenture’s digital skills AI course in 3 weeks.',
   },
 ];
-
-function Certifications() {
+function Certifications({ certifications, courses }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 p-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10">
+      {/* Header and Badges Button */}
+      <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between mb-10 space-y-4 sm:space-y-0">
         <h1 className="text-4xl font-bold text-center sm:text-left text-purple-700 animate-bounceOnce">
           My Certifications
         </h1>
-        <div className="mt-4 sm:mt-0 flex justify-center sm:justify-end">
+        <div className="flex justify-center sm:justify-end">
           <Link to="/badges">
             <button className="bg-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-600 transition-colors">
               See Badges
@@ -128,15 +128,18 @@ function Certifications() {
         </div>
       </div>
 
-      {/* Certifications Cards */}
+      {/* Certifications Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 mt-6">
-        {certifications.map((cert, idx) => (
-          <div key={idx} className="p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800">
-            <h3 className="text-2xl font-semibold text-white mb-2">{cert.title}</h3>
-            <p className="text-xl text-white mb-2">{cert.organization}</p>
-            <p className="text-md text-white mb-2">{cert.date}</p>
-            <p className="text-white mb-2">{cert.description}</p>
-            <a href={cert.certificateLink} target="_blank" rel="noopener noreferrer">
+        {certifications.map((certification, idx) => (
+          <div
+            key={idx}
+            className="p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800"
+          >
+            <h3 className="text-2xl font-semibold text-white mb-2">{certification.title}</h3>
+            <p className="text-xl text-white mb-2">{certification.organization}</p>
+            <p className="text-md text-white mb-2">{certification.date}</p>
+            <p className="text-white mb-2">{certification.description}</p>
+            <a href={certification.certificateLink} target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-700 text-white px-6 py-2 rounded-full mt-4 hover:bg-gray-600 transition-colors">
                 See Certificate
               </button>
@@ -145,23 +148,28 @@ function Certifications() {
         ))}
       </div>
 
+      {/* Course Certificates Section */}
       <h2 className="text-3xl font-bold text-center text-purple-700 mt-20 mb-10 animate-fadeIn">
         Course Completion Certificates
       </h2>
 
-      {/* Courses Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
         {courses.map((course, idx) => (
-          <div key={idx} className="p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800">
+          <div
+            key={idx}
+            className="p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 animate-fadeIn bg-gray-800"
+          >
             <h3 className="text-2xl font-semibold text-white mb-2">{course.title}</h3>
             <p className="text-xl text-white mb-2">{course.organization}</p>
             <p className="text-md text-white mb-2">{course.date}</p>
             <p className="text-white mb-2">{course.description}</p>
-            <a href={course.certificateLink} target="_blank" rel="noopener noreferrer">
-              <button className="bg-gray-700 text-white px-6 py-2 rounded-full mt-4 hover:bg-gray-600 transition-colors">
-                See Certificate
-              </button>
-            </a>
+            {course.certificateLink !== '#' && (
+              <a href={course.certificateLink} target="_blank" rel="noopener noreferrer">
+                <button className="bg-gray-700 text-white px-6 py-2 rounded-full mt-4 hover:bg-gray-600 transition-colors">
+                  See Certificate
+                </button>
+              </a>
+            )}
           </div>
         ))}
       </div>
