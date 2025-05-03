@@ -15,7 +15,7 @@ const projects = [
       'A secure system that combines cryptography and steganography to hide and encrypt messages. Ensures maximum digital security.',
     image: '/images/crypto.png',
     github: 'https://github.com/Anju-93905063/Cryptowithstegano',
-    youtube: 'https://youtube.com/yourcryptowithsteganodemo',
+    youtube: 'https://youtu.be/K_oubXl8TF0',
   },
   {
     title: 'Online Prescription Generator',
