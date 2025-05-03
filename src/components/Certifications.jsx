@@ -115,19 +115,20 @@ const courses = [
 function Certifications() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 p-6">
-      {/* Header and Badges Button */}
-      <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between mb-10 space-y-4 sm:space-y-0">
-        <h1 className="text-4xl font-bold text-center sm:text-left text-purple-700 animate-bounceOnce">
-          My Certifications
-        </h1>
-        <div className="flex justify-center sm:justify-end">
-          <Link to="/badges">
-            <button className="bg-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-600 transition-colors">
-              See Badges
-            </button>
-          </Link>
-        </div>
-      </div>
+  {/* Header and Badges Button */}
+  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-10 space-y-4 lg:space-y-0">
+    <h1 className="text-4xl font-bold text-purple-700 animate-bounceOnce text-center lg:text-left">
+      My Certifications
+    </h1>
+    <div className="flex justify-center lg:justify-end">
+      <Link to="/badges">
+        <button className="bg-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-600 transition-colors">
+          See Badges
+        </button>
+      </Link>
+    </div>
+  </div>
+
 
       {/* Certifications Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 mt-6">
