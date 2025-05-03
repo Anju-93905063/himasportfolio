@@ -111,7 +111,8 @@ const courses = [
     description: 'Completed Accenture’s digital skills AI course in 3 weeks.',
   },
 ];
-function Certifications({ certifications, courses }) {
+
+function Certifications() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 p-6">
       {/* Header and Badges Button */}
